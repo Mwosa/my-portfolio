@@ -1,6 +1,4 @@
-/* Base CSS Reset and Variables */
 :root {
-  /* Colors - Dark theme with browns/blacks */
   --primary: #c19a6b;
   --dark-bg: #121212;
   --darker-bg: #0a0a0a;
@@ -8,15 +6,12 @@
   --grey-text: #a0a0a0;
   --accent: #8d6e63;
   
-  /* Fonts */
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Poppins', sans-serif;
   
-  /* Spacing */
-  --section-padding: 5rem 0;
+  --section-padding: 8rem 0;
   --container-padding: 0 2rem;
   
-  /* Border radius */
   --border-radius: 0.5rem;
   --border-radius-lg: 1.5rem;
 }
@@ -46,7 +41,6 @@ body {
   padding: var(--container-padding);
 }
 
-/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   line-height: 1.3;
@@ -136,7 +130,7 @@ img {
   transform: translateY(-3px);
 }
 
-/* Header and Navigation */
+/* Header and navigation */
 header {
   padding: 1.5rem 0;
   position: fixed;
@@ -185,25 +179,44 @@ header .container {
   width: 100%;
 }
 
-/* Hero Section */
+/* Hero section */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
-  padding-top: 5rem;
+  padding: 5rem 0 0 0;
 }
 
+
 .hero-text {
-  max-width: 600px;
+  max-width: 1200px;
   position: relative;
   z-index: 2;
+  margin: 0;
+}
+
+.hero-text h1 {
+  font-size: 3rem; 
+  font-weight: 700;
+  color: var(--light-text);
+  margin-bottom: 0.5rem;
+}
+
+.hero-text h2 {
+  font-size: 2rem; 
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1rem;
 }
 
 .hero-text p {
   color: var(--light-text);
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+}
+.hero-text a{
+  margin-top: 3rem;
 }
 
 .portfolio-overlay {
@@ -234,6 +247,7 @@ header .container {
   width: 100%;
   border: 4px solid var(--primary);
   transform: translate(-12px, -12px);
+  border-radius: 8px;
 }
 
 .about-content {
@@ -246,13 +260,7 @@ header .container {
   margin-top: 2rem;
 }
 
-/* Portfolio Section */
-.portfolio-categories {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-  flex-wrap: wrap;
-}
+/* Portfolio section */
 
 .category-btn {
   background: none;
@@ -269,7 +277,7 @@ header .container {
 }
 
 .project {
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
 }
 
 .project-number {
@@ -299,6 +307,14 @@ header .container {
   overflow: hidden;
 }
 
+.project-image img {
+  width: 100%;
+  height: 300px; 
+  object-fit: cover; 
+  border: 3px solid var(--primary); 
+  border-radius: var(--border-radius); 
+}
+
 .accent-bg-1 {
   background-color: rgba(141, 110, 99, 0.2);
 }
@@ -307,16 +323,51 @@ header .container {
   background-color: rgba(193, 154, 107, 0.2);
 }
 
-.read-more {
+.view-project {
   display: flex;
   align-items: center;
   color: var(--primary);
   gap: 0.5rem;
   font-weight: 500;
+  margin-top: 2rem;
 }
 
-.read-more i {
+.view-project i {
   font-size: 0.8rem;
+}
+
+/* Education section */  
+
+#education {
+  background-color: var(--darker-bg);
+  color: var(--light-text); 
+  padding: var(--section-padding);
+}
+
+.education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.education-item {
+  background-color: var(--dark-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.education-item h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.education-item p {
+  font-size: 1rem;
+  color: var(--grey-text);
+  margin-bottom: 0.5rem;
 }
 
 /* Services Section */
@@ -350,8 +401,8 @@ header .container {
   color: var(--primary);
 }
 
-/* Experience Section */
-.experience-grid {
+/* Tools section */
+.tools-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   gap: 2rem;
@@ -372,7 +423,9 @@ header .container {
   color: var(--light-text);
 }
 
-/* Contact Section */
+
+
+/* Contact section */
 .contact-section {
   background-color: var(--darker-bg);
   border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
